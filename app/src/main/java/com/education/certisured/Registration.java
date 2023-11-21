@@ -2,6 +2,7 @@ package com.education.certisured;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         intializeId();
+        intializeOnclicListner();
     }
 
     private void intializeId(){
@@ -29,6 +31,10 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         editTextAge = findViewById(R.id.editTextAge);
         registrationButton=(Button) findViewById(R.id.buttonRegister);
+    }
+
+    private void   intializeOnclicListner(){
+        registrationButton.setOnClickListener(this);
     }
 
     @Override
@@ -54,5 +60,13 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         editor.putString("age", age);
         editor.apply();
         Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show();
+        navigateToLoginActivity();
     }
+
+    private void navigateToLoginActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+
 }

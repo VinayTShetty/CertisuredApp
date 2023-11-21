@@ -17,15 +17,15 @@
         android:src="@drawable/baseline_login_24">
     </ImageView>
     <EditText
-        android:id="@+id/username_ed"
+        android:id="@+id/email_ed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="18dp"
         android:background="#E6ECE1"
-        android:maxLength="10"
-        android:hint="username"
+        android:maxLength="15"
+        android:hint="Email"
         android:padding="8dp"
         />
     <EditText
@@ -40,14 +40,24 @@
         android:inputType="textPassword"
         android:padding="8dp"
         />
+
+    <CheckBox
+        android:id="@+id/checkbox_rembme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_ed"
+        android:layout_alignStart="@id/password_ed"
+        android:text="Remember Me"
+        >
+    </CheckBox>
     <Button
         android:id="@+id/login_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password_ed"
+        android:layout_below="@+id/checkbox_rembme"
         android:layout_alignStart="@+id/password_ed"
         android:layout_alignEnd="@+id/password_ed"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="10dp"
         android:text="login"
         android:textColor="@color/black"
         />
